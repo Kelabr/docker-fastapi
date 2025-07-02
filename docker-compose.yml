@@ -1,0 +1,12 @@
+services:
+  #Serviços da sua aplicação (no caso a FastApi)
+  app:
+    build: . # Constroi a imagém a partir do Dockerfile na raiz do projeto
+    container_name: minha-api
+    ports:
+      - "8000:8000" #Mapeia a porta 8000 do host para a porta 8000 do container
+      #(Conforme definido no see Dockerfile com EXPOSE 8000 e CMD)
+    volumes:
+      -  .:/app #Monta diretório atual (onde está o seu código) em /app dentro do container 
+                # Isso é otimo para desenvolvimento, pois as alterações no código 
+                
